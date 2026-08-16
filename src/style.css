@@ -1,0 +1,254 @@
+/* Базовые настройки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #2d2d2d;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 30px 15px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrap {
+    max-width: 750px;
+    width: 100%;
+    background: #f5f5f5;
+    padding: 25px 25px 30px;
+    border-radius: 25px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+.header h2 {
+    text-align: center;
+    color: #1a1a1a;
+    font-weight: 400;
+    font-size: 28px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.slider-box {
+    background: #e8e8e8;
+    padding: 15px;
+    border-radius: 18px;
+    position: relative;
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.slider-holder {
+    overflow: hidden;
+    border-radius: 12px;
+    background: #ccc;
+    height: 350px;
+    position: relative;
+}
+
+.slider-line {
+    display: flex;
+    height: 100%;
+    transition: transform 0.45s ease-in-out;
+    width: 100%;
+}
+
+.slide-item {
+    min-width: 100%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.slide-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-item .fake-img {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(145deg, #6a11cb 0%, #2575fc 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 60px;
+}
+
+.slide-item .fake-img small {
+    font-size: 18px;
+    margin-top: 12px;
+    opacity: 0.85;
+}
+
+/* Кнопки */
+.nav-buttons {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    pointer-events: none;
+    padding: 0 5px;
+}
+
+.nav-buttons button {
+    pointer-events: all;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.92);
+    color: #222;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.nav-buttons button:hover {
+    transform: translateY(-50%) scale(1.08);
+    background: white;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+.nav-buttons button:active {
+    transform: translateY(-50%) scale(0.92);
+}
+
+.btn-left {
+    left: 15px;
+}
+
+.btn-right {
+    right: 15px;
+}
+
+/* Точки */
+.dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 18px;
+    padding: 5px 0;
+}
+
+.dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #bbb;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.dot:hover {
+    background: #999;
+    transform: scale(1.15);
+}
+
+.dot.active-dot {
+    background: #4a6cf7;
+    border-color: #4a6cf7;
+    transform: scale(1.2);
+    box-shadow: 0 0 18px rgba(74,108,247,0.5);
+}
+
+/* Инфо */
+.info-panel {
+    text-align: center;
+    margin-top: 12px;
+    color: #555;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.info-panel span {
+    color: #4a6cf7;
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.bottom-info {
+    margin-top: 18px;
+    padding: 14px 18px;
+    background: #fff;
+    border-radius: 12px;
+    border-left: 5px solid #4a6cf7;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.img-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+}
+
+.img-desc {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Под мобилки */
+@media (max-width: 700px) {
+    .wrap {
+        padding: 15px;
+    }
+
+    .slider-holder {
+        height: 280px;
+    }
+
+    .nav-buttons button {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+    }
+
+    .btn-left {
+        left: 8px;
+    }
+
+    .btn-right {
+        right: 8px;
+    }
+
+    .header h2 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 450px) {
+    .slider-holder {
+        height: 220px;
+    }
+
+    .nav-buttons button {
+        width: 32px;
+        height: 32px;
+        font-size: 13px;
+    }
+
+    .dot {
+        width: 11px;
+        height: 11px;
+    }
+
+    .dots {
+        gap: 8px;
+    }
+}
